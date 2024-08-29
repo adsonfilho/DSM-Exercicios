@@ -1,6 +1,6 @@
 let senha = "abc";
 
-while(senha){
+while(true){
     let entrada = prompt("Entre com a senha: ");
 
     if (entrada != senha){
