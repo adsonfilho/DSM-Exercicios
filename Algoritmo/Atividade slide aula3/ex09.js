@@ -1,12 +1,17 @@
 let senha = "abc";
 let tentativa = 0;
 
-while(tentativa < 3){
+while(true){
     let entrada = prompt("Entre com a senha: ");
-
+    
     if (entrada != senha){
-        console.log("Senha incorreta.");
-        tentativa++;
+        if (tentativa == 2){
+            console.log("Numero de tentativas acabou");
+            break;
+        }else{
+            console.log("Senha incorreta.");
+            tentativa++;
+        }
     }else{
         console.log("Acesso liberado");
         break;
