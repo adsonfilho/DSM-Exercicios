@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercício 5</title>
+    <style>
+      html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        font-family: calibri;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+      }
+      #menu {
+        width:100vw;
+        border-bottom: 1px solid #aaa;
+        box-sizing: border-box;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #corpo {
+        width:100vw;
+        background-color: #444;
+        display: flex; 
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+      }
+      #rodape {
+        width:100vw;
+        border-top: 1px solid #aaa;
+        box-sizing: border-box;
+        height: 80px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #titulo{
+        display: flex;
+        font-size: 70px;
+        align-items: center;
+        font-weight: bold;
+      }
+      #avatar{
+        display: flex;
+        font-size: 20px;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      form{
+        width: 50%;
+      }
+
+      form, .botao{
+        color: #FFF;
+      }
+
+      fieldset{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      form div{
+        display: flex;
+        flex-direction: column;
+      }
+
+      input, .botao{
+        border: 1px solid white;
+        border-radius: 2px;
+      }
+
+      .botao{
+        background-color: #1E90FF;
+        font-weight: bold;
+        border-color: #1E90FF;
+      }
+      #botoes{
+        display: flex;
+        gap: 5px;
+      }
+    </style>
+</head>
+<body>
+  <div id="menu">
+    <div id="titulo">
+      <img src="../imagens/css.png" alt="" width="60" height="60" />
+      <div>CSS3</div>
+    </div>
+    <div id="avatar">
+      <div>Bill Gates</div>
+      <img src="../imagens/avatar.jpg" alt="" width="42" height="42" />
+    </div>
+  </div>
+  <div id="corpo">
+    <form>
+      <fieldset>
+        <legend>Login</legend>
+        <div>
+          <label>e-mail</label>
+          <input type="email" name="mail" />
+        </div>
+        <div>
+          <label>Senha</label>
+          <input type="password" name="senha" />
+        </div>
+        <div id="botoes">
+          <input type="submit" value="Enviar" class="botao" />
+          <input type="reset" value="Limpar" class="botao" />
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div id="rodape">
+    <img src="../imagens/Fatec.png" alt="" width="87" height="41" />
+    <img src="../imagens/CPS.png" alt="" width="85" height="56" />
+    <img src="../imagens/Brasao.png" alt="" width="81" height="54" />
+  </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercício 9</title>
+    <style>
+      html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        font-family: calibri;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+      }
+      #menu {
+        width:100vw;
+        border-bottom: 1px solid #aaa;
+        box-sizing: border-box;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #corpo {
+        width:100vw;
+        background-color: #444;
+        display: flex; 
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+      }
+      #rodape {
+        width:100vw;
+        border-top: 1px solid #aaa;
+        box-sizing: border-box;
+        height: 80px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #titulo{
+        display: flex;
+        font-size: 70px;
+        align-items: center;
+        font-weight: bold;
+      }
+      #avatar{
+        display: flex;
+        font-size: 20px;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      #esquerda{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 100%;
+        background-color: #444;
+      }
+      #direita{
+        display: flex;
+        height: 100%;
+        flex-grow: 1;
+        background-color: #444;
+        justify-content: center;
+        align-items: center;
+      }
+
+      form{
+        width: 50%;
+      }
+
+      form, form .botao{
+        color: #FFF;
+      }
+
+      fieldset{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 10px;
+      }
+
+      form div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+      }
+
+      input, .botao{
+        border: 1px solid white;
+        border-radius: 2px;
+        height: 25px;
+      }
+
+      .botao{
+        background-color: #1E90FF;
+        font-weight: bold;
+        border-color: #1E90FF;
+      }
+      #botoes{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        gap: 5px;
+      }
+
+      a{
+        text-decoration: none;
+        color: #4169E1;
+        border-bottom: 1px solid #4169E1;
+        padding: 10px;
+      }
+      a:hover{
+        color: #FF1493;
+      }
+    </style>
+</head>
+<body>
+  <div id="menu">
+    <div id="titulo">
+      <img src="../imagens/css.png" alt="" width="60" height="60" />
+      <div>CSS3</div>
+    </div>
+    <div id="avatar">
+      <div>Bill Gates</div>
+      <img src="../imagens/avatar.jpg" alt="" width="42" height="42" />
+    </div>
+  </div>
+  <div id="corpo">
+    <div id="esquerda">
+      <a href="../ex01/index.html">Exercício 01</a>
+      <a href="../ex02/exercicio2.html">Exercício 02</a>
+      <a href="../ex03/exercicio3.html">Exercício 03</a>
+      <a href="../ex04/exercicio4.html">Exercício 04</a>
+      <a href="../ex05/exercicio5.html">Exercício 05</a>
+      <a href="../ex06/exercicio6.html">Exercício 06</a>
+      <a href="../ex07/exercicio7.html">Exercício 07</a>
+      <a href="../ex08/exercicio8.html">Exercício 08</a>
+      <a href="../ex10/exercicio10.html">Exercício 10</a>      
+    </div>
+    <div id="direita">
+      <form>
+        <fieldset>
+          <legend>Login</legend>
+          <div>
+            <label>e-mail</label>
+            <input type="email" name="mail" />
+          </div>
+          <div>
+            <label>Senha</label>
+            <input type="password" name="senha" />
+          </div>
+          <div id="botoes">
+            <input type="submit" value="Enviar" class="botao" />
+            <input type="reset" value="Limpar" class="botao" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <div id="rodape">
+    <img src="../imagens/Fatec.png" alt="" width="87" height="41" />
+    <img src="../imagens/CPS.png" alt="" width="85" height="56" />
+    <img src="../imagens/Brasao.png" alt="" width="81" height="54" />
+  </div>
+</body>
+
+
+</html>
