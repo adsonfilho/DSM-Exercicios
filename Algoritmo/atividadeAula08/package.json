@@ -8,7 +8,7 @@
     "ex02": "node ./src/ex02",
     "ex03": "node ./src/ex03",
     "ex04": "node ./src/ex04",
-    "ex05": "node ./src/ex05",
+    "ex05": "node ./src/ex05"
   },
   "author": "",
   "license": "ISC"
