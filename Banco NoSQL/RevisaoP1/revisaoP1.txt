@@ -1,0 +1,134 @@
+Exericio 1
+
+
+
+Exercicio 2
+
+db.clientes.find({cidade: "Fortaleza"})
+
+Exercicio 3
+
+db.clientes.find({$and:[
+  {cidade: "Fortaleza"},
+  {idade: {$gt: 25}}
+]})
+
+
+Exercicio 4
+
+db.produtos.find({}, {nome: true, preco: true, _id: false})
+
+Exercicio 5
+
+db.produtos.find({preco: {$gte: 200, $lte: 400}})
+
+Exercicio 6
+
+db.clientes.find({
+  $nor: [
+    { cidade: "Fortaleza" },
+    { idade: { $not: { $lt: 20 } } }
+  ]
+})
+
+Exercicio 7
+
+db.clientes.find({clienteVip: {$exists: true}})
+db.clientes.find({idade: {$type: "number"}})
+
+Exercicio 8
+
+db.clientes.insertOne({
+  nome: "Jorge",
+  idade: 22,
+  cidade: "Salvador"
+})
+
+Exercicio 9
+
+db.clientes.updateOne({nome: "Marcos"}, {$set: {cidade: "Natal"}})
+
+Exercicio 10
+
+db.clientes.updateOne({nome: "Lucas"}, {$set: {status: "Ativo"}})
+db.clientes.updateOne({nome: "Lucas"}, {$inc: {idade: 1}})
+
+Exercicio 11
+
+db.clientes.replaceOne({nome: "Julia"}, { nome: "Julia", idade: 31, cidade: "Rio de Janeiro", clienteVip: true })
+
+Exercicio 12
+
+db.produtos.updateMany({}, {$rename: {"preco":"valor"}})
+db.produtos.updateMany({}, {$unset: {"categoria": ""}})
+
+Exercicio 13
+
+db.produtos.deleteOne({nome:"FIFA 25"})
+
+Exercicio 14
+
+db.clientes.find({$or: [{cidade: "São Paulo"}, {cidade: "Recife"}]})
+
+Exercicio 15
+
+db.vendas.aggregate([
+  {
+    $lookup: {
+      from: "produtos",          
+      localField: "produtoId",  
+      foreignField: "_id",       
+      as: "produto"             
+    }
+  }
+])
+
+Exercicio 16
+
+db.vendas.aggregate([
+  {
+    $lookup: {                   
+      from: "produtos",
+      localField: "produtoId",
+      foreignField: "_id",
+      as: "produto"
+    }
+  },
+  { $unwind: "$produto" },       
+  {
+    $group: {                     
+      _id: "$produto.categoria",
+      totalVendido: { $sum: "$quantidade" } 
+    }
+  }
+])
+
+
+Exercicio 17
+
+db.vendas.aggregate([
+  {
+    $lookup: { 
+      from: "produtos",
+      localField: "produtoId",
+      foreignField: "_id",
+      as: "produto"
+    }
+  },
+  { $unwind: "$produto" }, 
+  {
+    $group: { 
+      _id: "$produto.categoria",
+      totalVendido: { $sum: "$quantidade" }, 
+      vendas: { $push: "$$ROOT" } 
+    }
+  }
+])
+
+Exercicio 18
+
+db.produtos.find().sort({ preco: -1 }).limit(2)
+
+Exercicio 19
+
+db.produtos.find().sort({ valor: -1 }).skip(2).limit(3)
