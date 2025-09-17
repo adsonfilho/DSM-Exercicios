@@ -1,0 +1,38 @@
+Estudo sobre STAC
+
+STAC é uma API do projeto Brazil Data Cube(BDC) que disponibiliza coleções de imagens e colocoes de cubo de dados.
+
+Existe 4 tipos de retornos na API - Catalog, Collection, Item and Asset.
+Catalog:
+fornece uma estrutura para linkar vários STAC Items juntos ou até mesmo para outros STAC Catalogs ou Collections.
+
+https://data.inpe.br/bdc/stac/v1/
+
+Collection:
+é uma especialização de Catalog que permite informação adicional sobre uma coleção de dados espaço-temporais.
+
+https://data.inpe.br/bdc/stac/v1/collections/{collectionId}
+
+Item:
+um STAC Item é uma unidade atômica de metadados no STAC, fornecendo links para os assets (incluindo thumbnails) que eles representam. É um recurso GeoJSON com campos adicionais como tempo, links para entidades relacionadas e principalmente para os assets. De acordo com a especificação, é uma unidade atômica que descreve o dado a ser descoberto em um STAC Catalog ou Collection.
+
+https://data.inpe.br/bdc/stac/v1/collections/{collectionId}/items/{featureId}
+
+Asset:
+um spatiotemporal asset é qualquer arquivo que representa informação da Terra, capturado em um espaço e tempo.
+As assets que eles retornam é em tiff, XML, PNG
+
+Tiff:
+é um formato de arquivo de imagem raster (bitmap) que se destaca pela sua alta qualidade e flexibilidade, preservando informações como camadas e detalhes, sem perdas de dados
+
+Existe uma biblioteca em python pystac-client que consome essa API e disponibiliza metodos para trabalharmos com esses dados.
+
+Alguns tipos de filtragem possiveis:
+
+Filtro por data (datetime)
+Filtro por coordenadas geográficas (bbox) (longitude mínima, latitude mínima, longitude máxima, latitude máxima)
+Filtro por ID do item (id)
+Filtro por atributos de metadados como plataforma, cobertura de nuvem, tipo de asset, etc.
+
+Link para documentacao da API:
+https://data.inpe.br/bdc/stac/v1/docs
