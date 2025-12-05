@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservas restaurante</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Gerenciador de Reservas</h1>
+
+    <div class="form-container">
+        <h2 id="form-title">Cadastrar reserva</h2>
+
+        <input type="hidden" id="idReserva">
+
+        <input id="nomeCliente" placeholder="Nome cliente">
+        <input id="contatoCliente" placeholder="Contato cliente">
+
+        <select id="status">
+            <option value="reservado">Reservado</option>
+            <option value="ocupado">Ocupado</option>
+            <option value="finalizado">Finalizado</option>
+            <option value="cancelado">Cancelado</option>
+            <option value="disponivel">Disponivel</option>
+        </select>
+
+        <input id="numeroMesa" placeholder="Numero mesa">
+        <input id="quantidadePessoa" placeholder="Quantidade pessoas">
+
+        <label>Data reserva:</label>
+        <input id="dataReserva" type="date">
+
+        <input id="observacoes" type="string" placeholder="Obervacoes">
+
+        <button id="btnSalvar" onclick="salvarReserva()">Cadastrar</button>
+    </div>
+
+    <h2>Reservas cadastradas</h2>
+    <div id="listaReservas"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
